@@ -1,0 +1,24 @@
+:root {
+  --main-font: 'Play', sans-serif;
+  --accent-color: #fff;
+  --accent-text-color: #e9deff;
+  --shadow-color: #d795ff;
+  --section-title-offset: 45px;
+  /* --font-weight-title: 700;
+  --font-weight-text: 400;
+  --text-color: #fff;
+  --accent-color: #000;
+  --backgroind-gradient: repeating-linear-gradient(
+      #d3d3d3 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      #d3d3d3 0 2px,
+      transparent 2px 4px
+    ),
+    linear-gradient(#e7e7e7 0.01%, #1a1a1a 100%);
+  --btn-text-color: var(--background-color, #fff);
+  --heart-countur-color: var(--accent-color, #000);
+  --heart-body-color: #f00; */
+}

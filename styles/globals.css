@@ -17,25 +17,43 @@ h6,
 p,
 ul,
 ol,
-li {
+li,
+figure {
   margin: 0;
   padding: 0;
 }
 
 a {
+  display: block;
   color: inherit;
+  text-decoration: none;
 }
 
 button,
-input {
+input,
+select,
+option,
+textarea {
+  border: none;
+  padding: 0;
+  background-color: transparent;
   color: currentColor;
   font-family: inherit;
   font-size: inherit;
+  font-weight: inherit;
 }
 
 ul,
 ol {
   list-style: none;
+}
+
+img {
+  display: block;
+}
+
+option:disabled {
+  display: none;
 }
 
 .visually-hidden {
