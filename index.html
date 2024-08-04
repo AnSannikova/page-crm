@@ -8,20 +8,51 @@
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <!-- <link rel="stylesheet" href="./styles/animations.css" /> -->
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
   </head>
 
   <body class="pagecrm_page">
     <header class="pagecrm_header">
       <div class="pagecrm_header__nav">
         <img
-          class="pagecrm_header__logo"
+          class="pagecrm_logo pagecrm_header__logo"
           src="./svg/logo-alpha.svg"
           alt="Логотип компании Alpha Marketing"
         />
-        <a class="pagecrm_header__address" href="tel:+88124095222"
-          >8 812 409-52-22</a
-        >
+        <nav class="pagecrm_header__menu">
+          <ul class="pagecrm_header__menu-list">
+            <li class="pagecrm_header__menu-item">
+              <a href="#" class="pagecrm_header__menu-link">услуги</a>
+            </li>
+            <li class="pagecrm_header__menu-item">
+              <a href="#" class="pagecrm_header__menu-link">кейсы</a>
+            </li>
+            <li class="pagecrm_header__menu-item">
+              <a href="#" class="pagecrm_header__menu-link">ещё</a>
+            </li>
+            <li class="pagecrm_header__menu-item">
+              <button href="#" class="pagecrm_header__menu-button">
+                <img
+                  class="pagecrm_header__image-button"
+                  src="./svg/search-icon.svg"
+                  alt="Иконка лупы"
+                />
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div class="pagecrm_header__contacts">
+          <a class="pagecrm_header__phone" href="tel:+88124095222"
+            >8 812 409-52-22</a
+          >
+          <button
+            class="pagecrm_button pagecrm_header__button pagecrm_button_hover"
+            type="button"
+          >
+            <span class="pagecrm_button__text">задать вопрос</span>
+          </button>
+        </div>
       </div>
       <div class="pagecrm_header__mobile-nav">
         <div class="pagecrm_mobile-menu">
@@ -201,11 +232,13 @@
 
         <section class="pagecrm_contact">
           <form class="pagecrm_form pagecrm_contact-form">
-            <h2 class="pagecrm_form__title">Оставить заявку</h2>
-            <p class="pagecrm_form__text">
-              Выберите систему для вашего бизнеса, и мы свяжемся с Вами в
-              течение 20 минут
-            </p>
+            <div class="pagecrm_form__text-wrapper">
+              <h2 class="pagecrm_form__title">Оставить заявку</h2>
+              <p class="pagecrm_form__text">
+                Выберите систему для вашего бизнеса, и мы свяжемся с Вами в
+                течение 20 минут
+              </p>
+            </div>
             <input
               name="name"
               type="text"
@@ -220,17 +253,10 @@
               placeholder="Телефон"
               required
             />
-            <div class="pagecrm_form__select-wrapper">
-              <select
-                class="pagecrm_form__input pagecrm_contact-form__select pagecrm_contact-form__input"
-                name="program"
-                required
-              >
-                <option selected disabled value="">Выберите систему</option>
-                <option value="amocrm">amoCRM</option>
-                <option value="bitrix">Битрикс24</option>
-                <option value="another">Нужна помощь в выборе</option>
-              </select>
+            <div
+              class="pagecrm_form__input pagecrm_form__select pagecrm_contact-form__input"
+            >
+              <p>Выберите систему</p>
             </div>
             <textarea
               class="pagecrm_form__input pagecrm_contact-form__input pagecrm_contact-form__textarea"
@@ -248,31 +274,38 @@
         </section>
 
         <section class="pagecrm_reasons">
-          <h2 class="pagecrm_title pagecrm_title_caps pagecrm_reasons__title">
-            КОМУ ПОЛЕЗНА CRM
-          </h2>
-          <ul class="pagecrm_reasons__list">
-            <li class="pagecrm_reasons__item">
-              Любому бизнесу, работающему с клиентской базой
-            </li>
-            <li class="pagecrm_reasons__item">
-              На компьютер, подключите гарнитуру и звоните прямо из CRM одним
-              кликом
-            </li>
-            <li class="pagecrm_reasons__item">
-              На компьютер, подключите гарнитуру и звоните прямо из CRM одним
-              кликом
-            </li>
-          </ul>
+          <div class="pagecrm_titles-wrapper">
+            <h2 class="pagecrm_title pagecrm_title_caps pagecrm_reasons__title">
+              КОМУ ПОЛЕЗНА CRM
+            </h2>
+          </div>
+          <div class="pagecrm_reasons__list-wrapper">
+            <ul class="pagecrm_reasons__list">
+              <li class="pagecrm_reasons__item">
+                Любому бизнесу, работающему с клиентской базой
+              </li>
+              <li class="pagecrm_reasons__item">
+                На компьютер, подключите гарнитуру и звоните прямо из CRM одним
+                кликом
+              </li>
+              <li class="pagecrm_reasons__item">
+                На компьютер, подключите гарнитуру и звоните прямо из CRM одним
+                кликом
+              </li>
+            </ul>
+            <img
+              class="pagecrm_reasons__image"
+              src="./images/smartphone.webp"
+              alt="Черный смартфон, а над ним блоки графиков в фиолетовых тонах"
+            />
+          </div>
         </section>
 
         <section class="pagecrm_projects">
-          <h2 class="pagecrm_title pagecrm_title_caps pagecrm_projects__title">
-            CRM В БИЗНЕСЕ
-          </h2>
-          <h3 class="pagecrm_subtitle pagecrm_projects__subtitle">
-            Наши кейсы
-          </h3>
+          <div class="pagecrm_titles-wrapper">
+            <h2 class="pagecrm_title pagecrm_title_caps">CRM В БИЗНЕСЕ</h2>
+            <h3 class="pagecrm_subtitle">Наши кейсы</h3>
+          </div>
           <ul class="pagecrm_projects__list">
             <li class="pagecrm_projects__item">
               <article class="pagecrm_projects__project-card">
@@ -290,23 +323,25 @@
                     </figcaption>
                   </figure>
                 </div>
-                <div class="pagecrm_project-card__text-wrapper">
-                  <h4 class="pagecrm_project-card__card-title">
-                    &#8220;Пестовский Лесокомбинат&#8221;
-                  </h4>
-                  <p class="pagecrm_project-card__text">
-                    Строительная компания
-                  </p>
-                  <p class="pagecrm_project-card__text pagecrm_gradient-text">
-                    Работают на платформе amoCRM
-                  </p>
+                <div class="pagecrm_project-card__left-wrapper">
+                  <div class="pagecrm_project-card__text-wrapper">
+                    <h4 class="pagecrm_project-card__card-title">
+                      &#8220;Пестовский Лесокомбинат&#8221;
+                    </h4>
+                    <p class="pagecrm_project-card__text">
+                      Строительная компания
+                    </p>
+                    <p class="pagecrm_project-card__text pagecrm_gradient-text">
+                      Работают на платформе amoCRM
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    class="pagecrm_project-card__button pagecrm_button_hover"
+                  >
+                    Подробнее
+                  </button>
                 </div>
-                <button
-                  type="button"
-                  class="pagecrm_project-card__button pagecrm_button_hover"
-                >
-                  Подробнее
-                </button>
               </article>
             </li>
             <li class="pagecrm_projects__item">
@@ -325,23 +360,25 @@
                     </figcaption>
                   </figure>
                 </div>
-                <div class="pagecrm_project-card__text-wrapper">
-                  <h4 class="pagecrm_project-card__card-title">
-                    Магазин &#8220;Mongol Store&#8221;
-                  </h4>
-                  <p class="pagecrmproject-cards__text">
-                    Одежда из натуральной шерсти
-                  </p>
-                  <p class="pagecrm_project-card__text pagecrm_gradient-text">
-                    Используют БитриксCRM
-                  </p>
+                <div class="pagecrm_project-card__left-wrapper">
+                  <div class="pagecrm_project-card__text-wrapper">
+                    <h4 class="pagecrm_project-card__card-title">
+                      Магазин &#8220;Mongol Store&#8221;
+                    </h4>
+                    <p class="pagecrmproject-cards__text">
+                      Одежда из натуральной шерсти
+                    </p>
+                    <p class="pagecrm_project-card__text pagecrm_gradient-text">
+                      Используют БитриксCRM
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    class="pagecrm_project-card__button pagecrm_button_hover"
+                  >
+                    Подробнее
+                  </button>
                 </div>
-                <button
-                  type="button"
-                  class="pagecrm_project-card__button pagecrm_button_hover"
-                >
-                  Подробнее
-                </button>
               </article>
             </li>
           </ul>
@@ -427,61 +464,206 @@
           </ul>
         </section>
 
-        <!-- Добавить новые элемент заголовок + подзаголовок -->
         <section class="pagecrm_application">
-          <h2 class="pagecrm_title pagecrm_title_without-caps">
-            Заявка на подбор и подключение CRM-системы
+          <div
+            class="pagecrm_titles-wrapper pagecrm_application__titles-wrapper"
+          >
+            <h2 class="pagecrm_title pagecrm_title_without-caps">
+              Заявка на подбор и подключение CRM-системы
+            </h2>
+            <h3 class="pagecrm_subtitle pagecrm_application__subtitle">
+              Проведем аудит, подготовим решение для вашего бизнеса и рассчитаем
+              стоимость
+            </h3>
+          </div>
+          <div class="pagecrm_form pagecrm_application-form__wrapper">
+            <form class="pagecrm_application-form">
+              <div class="pagecrm_form__text-wrapper">
+                <h2 class="pagecrm_form__title">Заполните форму</h2>
+                <p class="pagecrm_form__text">
+                  Оставьте свои контактные данные, мы свяжемся с Вами в течение
+                  20 минут
+                </p>
+              </div>
+              <input
+                name="name"
+                type="text"
+                class="pagecrm_form__input pagecrm_application-form__input"
+                placeholder="Имя"
+                required
+              />
+              <input
+                name="phone"
+                type="tel"
+                class="pagecrm_form__input pagecrm_application-form__input"
+                placeholder="Телефон"
+                required
+              />
+              <div
+                class="pagecrm_form__input pagecrm_form__select pagecrm_application-form__input"
+              >
+                <p>Выберите услугу</p>
+              </div>
+              <button
+                class="pagecrm_button pagecrm_application-form__button pagecrm_button_hover"
+                type="submit"
+              >
+                ОСТАВИТЬ ЗАЯВКУ
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <section class="pagecrm_partners">
+          <h2 class="pagecrm_title pagecrm_title_caps pagecrm_partners__title">
+            НАШ ПАРТНЁР ПО CRM-СИСТЕМАМ
           </h2>
-          <h3 class="pagecrm_subtitle pagecrm_application__subtitle">
-            Проведем аудит, подготовим решение для вашего бизнеса и рассчитаем
-            стоимость
-          </h3>
-          <form class="pagecrm_form pagecrm_application-form">
-            <h2 class="pagecrm_form__title">Заполните форму</h2>
-            <p class="pagecrm_form__text">
-              Оставьте свои контактные данные, мы свяжемся с Вами в течение 20
-              минут
+          <div class="pagecrm_partners-wrapper">
+            <img
+              src="./images/partners.webp"
+              alt="Логотипы продуктов Битрикс24 и amoCRM на фоне фиолетового графика"
+              class="pagecrm_partners__image"
+            />
+            <ul class="pagecrm_partners__links-list">
+              <li class="pagecrm_partners__links-item">
+                <a target="_blank" href="#" class="pagecrm_partners__link"
+                  >Битрикс24 (Управление бизнесом)</a
+                >
+              </li>
+              <li class="pagecrm_partners__links-item">
+                <a target="_blank" href="#" class="pagecrm_partners__link"
+                  >amoCRM (Управление бизнесом)</a
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="pagecrm_feedback">
+          <div class="pagecrm_feedback__text-wrapper">
+            <h2 class="pagecrm_feedback__title">Напишите нам!</h2>
+            <p class="pagecrm_feedback__text">
+              Заполните заявку и Мы свяжемся с Вами в течение 15 минут
             </p>
+            <p class="pagecrm_feedback__caption pagecrm_feedback__title">
+              Команда Alpha marketing
+            </p>
+          </div>
+          <form class="pagecrm_feedback__feedback-form">
             <input
               name="name"
               type="text"
-              class="pagecrm_form__input pagecrm_application-form__input"
-              placeholder="Имя"
+              class="pagecrm_feedback-form__input"
+              placeholder="Имя*"
+              required
+            />
+            <input
+              name="email"
+              type="email"
+              class="pagecrm_feedback-form__input"
+              placeholder="@Почта*"
               required
             />
             <input
               name="phone"
               type="tel"
-              class="pagecrm_form__input pagecrm_application-form__input"
-              placeholder="Телефон"
-              required
+              class="pagecrm_feedback-form__input"
+              placeholder="+7 (___) ___ - __ - __"
             />
-            <div class="pagecrm_form__select-wrapper">
-              <select
-                class="pagecrm_form__input pagecrm_application-form__select pagecrm_application-form__input"
-                name="service"
-                required
-              >
-                <option selected disabled value="">Выберите услугу</option>
-                <option value="connection">Подключение</option>
-                <option value="connection and configuration">
-                  Подключение + настройка
-                </option>
-                <option value="license renewal">
-                  Продление лицензий amoCRM или Битрикс24
-                </option>
-              </select>
-            </div>
+            <textarea
+              name="question"
+              class="pagecrm_feedback-form__input pagecrm_feedback-form__textarea"
+              placeholder="Задать вопрос"
+            ></textarea>
             <button
-              class="pagecrm_button pagecrm_contact-form__button pagecrm_button_hover"
-              type="button"
+              class="pagecrm_button pagecrm_button_hover pagecrm_feedback-form__button"
+              type="submit"
             >
-              ОСТАВИТЬ ЗАЯВКУ
+              задать вопрос
             </button>
           </form>
         </section>
       </div>
     </main>
+
+    <footer class="pagecrm_footer">
+      <nav class="pagecrm_footer__menu">
+        <h2 class="pagecrm_footer__title">Меню</h2>
+        <ul class="pagecrm_footer__menu-list">
+          <li class="pagecrm_footer__menu-item">
+            <a href="#" class="pagecrm_footer__menu-link">услуги</a>
+          </li>
+          <li class="pagecrm_footer__menu-item">
+            <a href="#" class="pagecrm_footer__menu-link">кейсы</a>
+          </li>
+          <li class="pagecrm_footer__menu-item">
+            <a href="#" class="pagecrm_footer__menu-link">Ещё</a>
+          </li>
+        </ul>
+      </nav>
+      <address class="pagecrm_pagecrm_footer__address">
+        <h2 class="pagecrm_footer__title">Контакты</h2>
+        <ul class="pagecrm_pagecrm_footer__list">
+          <li class="pagecrm_footer__item">Санкт-Петербург</li>
+          <li class="pagecrm_footer__item">Заозёрная 8, к.2, офис 202</li>
+          <li class="pagecrm_footer__item">Пн-Пт, 10:00 - 18:00</li>
+          <li class="pagecrm_footer__item">
+            <a href="tel:+88124095222" class="pagecrm_footer__link"
+              >8 (812) 409-52-22</a
+            >
+          </li>
+          <li class="pagecrm_footer__item">
+            <a
+              href="mailto:info@alpham.pro"
+              class="pagecrm_footer__link pagecrm_footer__email"
+              >info@alpham.pro</a
+            >
+          </li>
+        </ul>
+      </address>
+      <div class="pagecrm_footer__map-wrapper">
+        <iframe
+          class="pagecrm_footer__map"
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3A7bacfa4360f7aa64e6d3f6f30705c043ebaa1d940c20f63f69120220f54c47a3&amp;source=constructor"
+          width="100%"
+          height="240"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <img
+        class="pagecrm_logo pagecrm_footer__logo"
+        src="./svg/logo-alpha.svg"
+        alt="Логотип компании Alpha Marketing"
+      />
+
+      <ul class="pagecrm_footer__social-list">
+        <li class="pagecrm_footer__social-item">
+          <a target="_blank" href="#" class="pagecrm_footer__social-link"
+            ><img
+              src="./svg/vk-icon.svg"
+              alt="Иконка вконтакте"
+              class="pagecrm_footer__social-image"
+          /></a>
+        </li>
+        <li class="pagecrm_footer__social-item">
+          <a target="_blank" href="#" class="pagecrm_footer__social-link"
+            ><img
+              src="./svg/telegram-icon.svg"
+              alt="Иконка телеграм"
+              class="pagecrm_footer__social-image"
+          /></a>
+        </li>
+      </ul>
+
+      <div class="pagecrm_footer__copyright">
+        <p class="pagecrm_footer__copyright-text">© 2024 Альфа маркетинг</p>
+        <p class="pagecrm_footer__copyright-text">
+          <a href="#" class="pagecrm_footer__copyright-link"
+            >Политика конфиденциальности</a
+          >
+        </p>
+      </div>
+    </footer>
 
     <!-- <script src="./scripts/index.js"></script> -->
   </body>
