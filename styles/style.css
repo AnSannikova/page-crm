@@ -6,6 +6,10 @@
   background-size: cover;
 }
 
+.pagecrm_scroll-lock {
+  overflow: hidden;
+}
+
 .pagecrm_main {
   position: relative;
   padding: 0 10px;
@@ -333,6 +337,33 @@
   background: url(../svg/down-arrow-icon.svg) no-repeat center / cover;
 }
 
+.pagecrm_form__dropdown-options {
+  position: absolute;
+  z-index: 2;
+  inset: calc(100% + 5px) 0 0;
+  height: fit-content;
+  padding: 18px 40px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+  backdrop-filter: blur(100px);
+}
+
+.pagecrm_system-options {
+  background-color: #48057282;
+}
+
+.pagecrm_form__dropdown-is-open {
+  display: flex;
+}
+
+.pagecrm_form__dropdown-option:hover {
+  text-shadow:
+    0 0 20px var(--shadow-color, #d795ff),
+    0 0 4px var(--shadow-color, #d795ff);
+}
+
 .pagecrm_contact-form__textarea {
   min-height: 110px;
 }
@@ -646,6 +677,11 @@
     linear-gradient(210deg, #fff3 0%, #d795ff33 52%, #7bc2fe33 100%) border-box;
 }
 
+.pagecrm_services-options {
+  background-color: #d795ffb2;
+  padding: 18px 35px;
+}
+
 .pagecrm_application-form__button {
   width: 100%;
   padding: 16px 0;
@@ -883,6 +919,7 @@
 }
 
 .pagecrm_popup-success {
+  position: relative;
   padding: 27px 68px;
   border: 1px solid transparent;
   border-radius: 20px;
@@ -892,6 +929,12 @@
       border-box;
 }
 
+.pagecrm_popup-success__button {
+  position: absolute;
+  top: 26.5px;
+  right: 26.5px;
+}
+
 .pagecrm_popup-success__image {
   max-width: 75px;
   margin: 0 auto 20px;
@@ -899,8 +942,10 @@
 }
 
 .pagecrm_popup-success__text {
+  max-width: 332px;
+  width: 100%;
   font-weight: 700;
-  font-size: 20px;
+  font-size: clamp(1.25rem, 1.0323rem + 0.9677vw, 2rem);
   line-height: 1.5;
   letter-spacing: -0.03em;
   text-align: center;
@@ -1136,6 +1181,10 @@
     max-width: 500px;
     filter: drop-shadow(0 0 10px var(--shadow-color, #d795ff))
       drop-shadow(0 0 60px var(--shadow-color, #d795ff));
+  }
+
+  .pagecrm_services-select-text {
+    max-width: 310px;
   }
 
   .pagecrm_partners__title {

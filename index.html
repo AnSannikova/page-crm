@@ -254,9 +254,16 @@
               required
             />
             <div
-              class="pagecrm_form__input pagecrm_form__select pagecrm_contact-form__input"
+              class="pagecrm_form__input pagecrm_form__select pagecrm_contact-form__input pagecrm_system-select"
             >
-              <p>Выберите систему</p>
+              <p class="pagecrm_select-text">Выберите систему</p>
+              <ul class="pagecrm_form__dropdown-options pagecrm_system-options">
+                <li class="pagecrm_form__dropdown-option">amoCRM</li>
+                <li class="pagecrm_form__dropdown-option">Битрикс24</li>
+                <li class="pagecrm_form__dropdown-option">
+                  Нужна помощь в выборе
+                </li>
+              </ul>
             </div>
             <textarea
               class="pagecrm_form__input pagecrm_contact-form__input pagecrm_contact-form__textarea"
@@ -500,9 +507,22 @@
                 required
               />
               <div
-                class="pagecrm_form__input pagecrm_form__select pagecrm_application-form__input"
+                class="pagecrm_form__input pagecrm_form__select pagecrm_application-form__input pagecrm_services-select"
               >
-                <p>Выберите услугу</p>
+                <p class="pagecrm_select-text pagecrm_services-select-text">
+                  Выберите услугу
+                </p>
+                <ul
+                  class="pagecrm_form__dropdown-options pagecrm_services-options"
+                >
+                  <li class="pagecrm_form__dropdown-option">Подключение</li>
+                  <li class="pagecrm_form__dropdown-option">
+                    Подключение + настройка
+                  </li>
+                  <li class="pagecrm_form__dropdown-option">
+                    Продление лицензий amoCRM или Битрикс24
+                  </li>
+                </ul>
               </div>
               <button
                 class="pagecrm_button pagecrm_application-form__button pagecrm_button_hover"
@@ -643,6 +663,13 @@
     >
       <div class="pagecrm_popup__content">
         <div class="pagecrm_popup-success">
+          <button class="pagecrm_popup-success__button">
+            <img
+              class="pagecrm_popup-success__button-image"
+              src="./svg/cross-icon.svg"
+              alt="Иконка крестика"
+            />
+          </button>
           <img
             class="pagecrm_popup-success__image"
             src="./images/popup_success.webp"
