@@ -63,34 +63,46 @@ const onOptionClick = (evt, selectText) => {
   selectText.textContent = evt.target.textContent;
 };
 
-const onSelectClick = (evt, select) => {
-  const optionsBlock = evt.currentTarget.querySelector(
-    '.pagecrm_form__dropdown-options'
+const openOptions = (optionsBlock, options, selectText, select) => {
+  optionsBlock.classList.add('pagecrm_form__dropdown-is-open');
+  options.forEach((option) =>
+    option.addEventListener('click', (evt) => onOptionClick(evt, selectText))
   );
+  window.addEventListener('click', (evt) =>
+    handleClick(evt, select, optionsBlock, options, selectText)
+  );
+};
+
+const closeOptions = (optionsBlock, options, selectText, select) => {
+  options.forEach((option) =>
+    option.removeEventListener('click', (evt) => onOptionClick(evt, selectText))
+  );
+  optionsBlock.classList.remove('pagecrm_form__dropdown-is-open');
+  window.removeEventListener('click', (evt) =>
+    handleClick(evt, select, optionsBlock, options, selectText)
+  );
+};
+
+const onSelectClick = (evt) => {
+  const select = evt.currentTarget;
+  const optionsBlock = select.querySelector('.pagecrm_form__dropdown-options');
   const options = optionsBlock.querySelectorAll(
     '.pagecrm_form__dropdown-option'
   );
-  const selectText = evt.currentTarget.querySelector('.pagecrm_select-text');
+  const selectText = select.querySelector('.pagecrm_select-text');
 
   if (optionsBlock.classList.contains('pagecrm_form__dropdown-is-open')) {
-    options.forEach((option) =>
-      option.removeEventListener('click', (evt) =>
-        onOptionClick(evt, selectText)
-      )
-    );
-    optionsBlock.classList.remove('pagecrm_form__dropdown-is-open');
+    closeOptions(optionsBlock, options, selectText, select);
   } else {
-    optionsBlock.classList.add('pagecrm_form__dropdown-is-open');
-    options.forEach((option) =>
-      option.addEventListener('click', (evt) => onOptionClick(evt, selectText))
-    );
+    openOptions(optionsBlock, options, selectText, select);
   }
 };
 
-systemSelect.addEventListener('click', (evt) =>
-  onSelectClick(evt, systemSelect)
-);
+const handleClick = (evt, select, optionsBlock, options, selectText) => {
+  if (!select.contains(evt.target)) {
+    closeOptions(optionsBlock, options, selectText, select);
+  }
+};
 
-servicesSelect.addEventListener('click', (evt) =>
-  onSelectClick(evt, servicesSelect)
-);
+systemSelect.addEventListener('click', onSelectClick);
+servicesSelect.addEventListener('click', onSelectClick);
